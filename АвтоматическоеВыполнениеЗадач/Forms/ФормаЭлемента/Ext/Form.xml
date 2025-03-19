@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="47">
+			<Group>Horizontal</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="129"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="130"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="131"/>
+				</InputField>
+				<CheckBoxField name="Использовать" id="7">
+					<DataPath>Объект.Использовать</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользоватьКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ИспользоватьРасширеннаяПодсказка" id="132"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="49">
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="133"/>
+			<ChildItems>
+				<InputField name="ТочкаМаршрута" id="185">
+					<DataPath>Объект.ТочкаМаршрута</DataPath>
+					<ChoiceParameters>
+						<app:item name="Отбор.Вид">
+							<app:value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ВидыТочекБизнесПроцессов.EnumValue.Действие</Value>
+							</app:value>
+						</app:item>
+					</ChoiceParameters>
+					<ContextMenu name="ТочкаМаршрутаКонтекстноеМеню" id="186"/>
+					<ExtendedTooltip name="ТочкаМаршрутаРасширеннаяПодсказка" id="187"/>
+					<Events>
+						<Event name="OnChange">ТочкаМаршрутаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<LabelField name="ТочкаУсловия" id="194">
+					<DataPath>Объект.ТочкаУсловия</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Точка выбора варианта</v8:content>
+						</v8:item>
+					</Title>
+					<TextColor>#000080</TextColor>
+					<ContextMenu name="ТочкаУсловияКонтекстноеМеню" id="195"/>
+					<ExtendedTooltip name="ТочкаУсловияРасширеннаяПодсказка" id="196"/>
+				</LabelField>
+				<InputField name="ТочкаРезультат" id="191">
+					<DataPath>Объект.ТочкаРезультат</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариант</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ТочкаРезультатКонтекстноеМеню" id="192"/>
+					<ExtendedTooltip name="ТочкаРезультатРасширеннаяПодсказка" id="193"/>
+					<Events>
+						<Event name="StartChoice">ТочкаРезультатНачалоВыбора</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Группа7" id="115">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="139"/>
+			<ChildItems>
+				<Page name="Группа9" id="119">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документы</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа9РасширеннаяПодсказка" id="154"/>
+					<ChildItems>
+						<UsualGroup name="Группа4" id="53">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Документы</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>StrongSeparation</Representation>
+							<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="155"/>
+							<ChildItems>
+								<Table name="Документы" id="19">
+									<Representation>List</Representation>
+									<CommandBarLocation>None</CommandBarLocation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Документы</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ДокументыКонтекстноеМеню" id="20"/>
+									<AutoCommandBar name="ДокументыКоманднаяПанель" id="21"/>
+									<ExtendedTooltip name="ДокументыРасширеннаяПодсказка" id="156"/>
+									<SearchStringAddition name="ДокументыСтрокаПоиска" id="157">
+										<AdditionSource>
+											<Item>Документы</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДокументыСтрокаПоискаКонтекстноеМеню" id="158"/>
+										<ExtendedTooltip name="ДокументыСтрокаПоискаРасширеннаяПодсказка" id="159"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ДокументыСостояниеПросмотра" id="160">
+										<AdditionSource>
+											<Item>Документы</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДокументыСостояниеПросмотраКонтекстноеМеню" id="161"/>
+										<ExtendedTooltip name="ДокументыСостояниеПросмотраРасширеннаяПодсказка" id="162"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ДокументыУправлениеПоиском" id="163">
+										<AdditionSource>
+											<Item>Документы</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ДокументыУправлениеПоискомКонтекстноеМеню" id="164"/>
+										<ExtendedTooltip name="ДокументыУправлениеПоискомРасширеннаяПодсказка" id="165"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ДокументыНомерСтроки" id="38">
+											<DataPath>Объект.Документы.LineNumber</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДокументыНомерСтрокиКонтекстноеМеню" id="39"/>
+											<ExtendedTooltip name="ДокументыНомерСтрокиРасширеннаяПодсказка" id="166"/>
+										</LabelField>
+										<InputField name="ДокументыДокумент" id="41">
+											<DataPath>Объект.Документы.Документ</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДокументыДокументКонтекстноеМеню" id="42"/>
+											<ExtendedTooltip name="ДокументыДокументРасширеннаяПодсказка" id="167"/>
+										</InputField>
+										<CheckBoxField name="ДокументыИспользовать" id="44">
+											<DataPath>Объект.Документы.Использовать</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ДокументыИспользоватьКонтекстноеМеню" id="45"/>
+											<ExtendedTooltip name="ДокументыИспользоватьРасширеннаяПодсказка" id="168"/>
+										</CheckBoxField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="Группа10" id="121">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа10РасширеннаяПодсказка" id="169"/>
+					<ChildItems>
+						<UsualGroup name="Группа6" id="85">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фильтры</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>StrongSeparation</Representation>
+							<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="170"/>
+							<ChildItems>
+								<Table name="Фильтры" id="87">
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Фильтры</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ФильтрыКонтекстноеМеню" id="88"/>
+									<AutoCommandBar name="ФильтрыКоманднаяПанель" id="89"/>
+									<ExtendedTooltip name="ФильтрыРасширеннаяПодсказка" id="171"/>
+									<SearchStringAddition name="ФильтрыСтрокаПоиска" id="172">
+										<AdditionSource>
+											<Item>Фильтры</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ФильтрыСтрокаПоискаКонтекстноеМеню" id="173"/>
+										<ExtendedTooltip name="ФильтрыСтрокаПоискаРасширеннаяПодсказка" id="174"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ФильтрыСостояниеПросмотра" id="175">
+										<AdditionSource>
+											<Item>Фильтры</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ФильтрыСостояниеПросмотраКонтекстноеМеню" id="176"/>
+										<ExtendedTooltip name="ФильтрыСостояниеПросмотраРасширеннаяПодсказка" id="177"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ФильтрыУправлениеПоиском" id="178">
+										<AdditionSource>
+											<Item>Фильтры</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ФильтрыУправлениеПоискомКонтекстноеМеню" id="179"/>
+										<ExtendedTooltip name="ФильтрыУправлениеПоискомРасширеннаяПодсказка" id="180"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ФильтрыНомерСтроки" id="106">
+											<DataPath>Объект.Фильтры.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ФильтрыНомерСтрокиКонтекстноеМеню" id="107"/>
+											<ExtendedTooltip name="ФильтрыНомерСтрокиРасширеннаяПодсказка" id="181"/>
+										</LabelField>
+										<InputField name="ФильтрыРеквизитДокумента" id="109">
+											<DataPath>Объект.Фильтры.РеквизитДокумента</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceButton>true</ChoiceButton>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ContextMenu name="ФильтрыРеквизитДокументаКонтекстноеМеню" id="110"/>
+											<ExtendedTooltip name="ФильтрыРеквизитДокументаРасширеннаяПодсказка" id="182"/>
+											<Events>
+												<Event name="OnChange">ФильтрыРеквизитДокументаПриИзменении</Event>
+												<Event name="StartChoice">ФильтрыРеквизитДокументаНачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ФильтрыВидСравнения" id="127">
+											<DataPath>Объект.Фильтры.ВидСравнения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ФильтрыВидСравненияКонтекстноеМеню" id="128"/>
+											<ExtendedTooltip name="ФильтрыВидСравненияРасширеннаяПодсказка" id="183"/>
+											<Events>
+												<Event name="OnChange">ФильтрыВидСравненияПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ФильтрыЗначение" id="112">
+											<DataPath>Объект.Фильтры.Значение</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+											<ContextMenu name="ФильтрыЗначениеКонтекстноеМеню" id="113"/>
+											<ExtendedTooltip name="ФильтрыЗначениеРасширеннаяПодсказка" id="184"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="Группа3" id="197">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фильтры по табличным частям</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="198"/>
+					<ChildItems>
+						<UsualGroup name="Группа5" id="199">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фильтры по табличным частям</v8:content>
+								</v8:item>
+							</Title>
+							<Representation>StrongSeparation</Representation>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="200"/>
+							<ChildItems>
+								<Table name="ФильтрыПоТабличнымЧастям" id="201">
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>Объект.ФильтрыПоТабличнымЧастям</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ФильтрыПоТабличнымЧастямКонтекстноеМеню" id="202"/>
+									<AutoCommandBar name="ФильтрыПоТабличнымЧастямКоманднаяПанель" id="203"/>
+									<ExtendedTooltip name="ФильтрыПоТабличнымЧастямРасширеннаяПодсказка" id="204"/>
+									<SearchStringAddition name="ФильтрыПоТабличнымЧастямСтрокаПоиска" id="205">
+										<AdditionSource>
+											<Item>ФильтрыПоТабличнымЧастям</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ФильтрыПоТабличнымЧастямСтрокаПоискаКонтекстноеМеню" id="206"/>
+										<ExtendedTooltip name="ФильтрыПоТабличнымЧастямСтрокаПоискаРасширеннаяПодсказка" id="207"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ФильтрыПоТабличнымЧастямСостояниеПросмотра" id="208">
+										<AdditionSource>
+											<Item>ФильтрыПоТабличнымЧастям</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ФильтрыПоТабличнымЧастямСостояниеПросмотраКонтекстноеМеню" id="209"/>
+										<ExtendedTooltip name="ФильтрыПоТабличнымЧастямСостояниеПросмотраРасширеннаяПодсказка" id="210"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ФильтрыПоТабличнымЧастямУправлениеПоиском" id="211">
+										<AdditionSource>
+											<Item>ФильтрыПоТабличнымЧастям</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ФильтрыПоТабличнымЧастямУправлениеПоискомКонтекстноеМеню" id="212"/>
+										<ExtendedTooltip name="ФильтрыПоТабличнымЧастямУправлениеПоискомРасширеннаяПодсказка" id="213"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ФильтрыПоТабличнымЧастямНомерСтроки" id="214">
+											<DataPath>Объект.ФильтрыПоТабличнымЧастям.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ФильтрыПоТабличнымЧастямНомерСтрокиКонтекстноеМеню" id="215"/>
+											<ExtendedTooltip name="ФильтрыПоТабличнымЧастямНомерСтрокиРасширеннаяПодсказка" id="216"/>
+										</LabelField>
+										<InputField name="ФильтрыПоТабличнымЧастямРеквизитТабличнойЧасти" id="217">
+											<DataPath>Объект.ФильтрыПоТабличнымЧастям.РеквизитТабличнойЧасти</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="ФильтрыПоТабличнымЧастямРеквизитТабличнойЧастиКонтекстноеМеню" id="218"/>
+											<ExtendedTooltip name="ФильтрыПоТабличнымЧастямРеквизитТабличнойЧастиРасширеннаяПодсказка" id="219"/>
+											<Events>
+												<Event name="OnChange">ФильтрыПоТабличнымЧастямРеквизитТабличнойЧастиПриИзменении</Event>
+												<Event name="StartChoice">ФильтрыПоТабличнымЧастямРеквизитТабличнойЧастиНачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ФильтрыПоТабличнымЧастямВидСравнения" id="220">
+											<DataPath>Объект.ФильтрыПоТабличнымЧастям.ВидСравнения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ФильтрыПоТабличнымЧастямВидСравненияКонтекстноеМеню" id="221"/>
+											<ExtendedTooltip name="ФильтрыПоТабличнымЧастямВидСравненияРасширеннаяПодсказка" id="222"/>
+											<Events>
+												<Event name="OnChange">ФильтрыПоТабличнымЧастямВидСравненияПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ФильтрыПоТабличнымЧастямЗначение" id="223">
+											<DataPath>Объект.ФильтрыПоТабличнымЧастям.Значение</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<QuickChoice>false</QuickChoice>
+											<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+											<ContextMenu name="ФильтрыПоТабличнымЧастямЗначениеКонтекстноеМеню" id="224"/>
+											<ExtendedTooltip name="ФильтрыПоТабличнымЧастямЗначениеРасширеннаяПодсказка" id="225"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.АвтоматическоеВыполнениеЗадач</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>
